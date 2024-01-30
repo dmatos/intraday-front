@@ -1,0 +1,33 @@
+.navbar{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.form{
+  display: grid;
+  background-color: #bb7a2a;
+}
+
+.formfield .mdc-text-field--filled{
+  display: grid;
+  border-radius: 30px;
+}
+
+button{
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  border-width: 0px;
+}
+
+.mdc-text-field__input  {
+  text-align: center;
+}
+
+.mat-mdc-autocomplete-panel {
+  display: grid;
+  justify-items: center;
+  font-weight: bolder;
+}
