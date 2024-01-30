@@ -1,51 +1,62 @@
+<header>
 <mat-toolbar color="primary" class="navbar">
-  <mat-form-field class="formfield">
-    <input
-      type="text"
-      matInput
-      [formControl]="stockExchangeFormControl"
-      [matAutocomplete]="stockExchangesAutoComplete"/>
-    <mat-autocomplete
-      #stockExchangesAutoComplete="matAutocomplete"
-      (optionSelected)="selectStockExchangeOption($event)">
-      @for(stockExchange of filteredStockExchanges|async; track stockExchange) {
-        <mat-option [value]="stockExchange">
-          {{stockExchange}}
-        </mat-option>
-      }
-    </mat-autocomplete>
-  </mat-form-field>
-  <mat-form-field class="formfield">
-    <input
-      type="text"
-      matInput
-      [matAutocomplete]="tickersAutoComplete"
-      [formControl]="tickerFormControl"
-    />
-    <mat-autocomplete #tickersAutoComplete="matAutocomplete" (optionSelected)="selectTickerOption($event)" >
-      @for(ticker of filteredTickers|async; track ticker) {
-        <mat-option [value]="ticker">
-          {{ticker}}
-        </mat-option>
-      }
-    </mat-autocomplete>
-  </mat-form-field>
-  <mat-form-field class="formfield">
-    <input
+  <div class="form">
+    <div>
+      <mat-form-field class="formfield">
+        <input
+          type="text"
+          matInput
+          [formControl]="stockExchangeFormControl"
+          [matAutocomplete]="stockExchangesAutoComplete"/>
+        <mat-autocomplete
+          #stockExchangesAutoComplete="matAutocomplete"
+          (optionSelected)="selectStockExchangeOption($event)">
+          @for(stockExchange of filteredStockExchanges|async; track stockExchange) {
+            <mat-option [value]="stockExchange">
+              {{stockExchange}}
+            </mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="formfield">
+        <input
+          type="text"
+          matInput
+          [matAutocomplete]="tickersAutoComplete"
+          [formControl]="tickerFormControl"
+        />
+        <mat-autocomplete #tickersAutoComplete="matAutocomplete" (optionSelected)="selectTickerOption($event)" >
+          @for(ticker of filteredTickers|async; track ticker) {
+            <mat-option [value]="ticker">
+              {{ticker}}
+            </mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="formfield datepicker">
+        <input
 
-      matInput [matDatepicker]="picker"
-      [matDatepickerFilter]="daysFilter"
-      [defaultValue]="date"
-      (dateInput)="onDateEvent($event)"
-      (dateChange)="onDateEvent($event)"
-    >
-    <mat-datepicker-toggle matIconSuffix [for]="picker">
-    </mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  <div class="button">
-    <button>
-      <mat-icon>trending_up</mat-icon>
-    </button>
+          matInput [matDatepicker]="picker"
+          [matDatepickerFilter]="daysFilter"
+          [defaultValue]="date"
+          (dateInput)="onDateEvent($event)"
+          (dateChange)="onDateEvent($event)"
+        >
+        <mat-datepicker-toggle matIconSuffix [for]="picker">
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="buttondiv">
+      <button class="button">
+        <mat-icon color="primary">trending_up</mat-icon>
+      </button>
+    </div>
   </div>
+
 </mat-toolbar>
+</header>

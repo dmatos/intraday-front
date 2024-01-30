@@ -1,25 +1,26 @@
-.navbar{
+header{
   display: grid;
-  justify-content: center;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  grid-template-columns: repeat(3, 4fr);
+  max-width: 600px;
 }
 
-.form{
+mat-toolbar.navbar{
+  margin: 2px;
   display: grid;
-  background-color: #bb7a2a;
+  border-radius: 1cm;
+  height: 50px;
+}
+
+div.form{
+  display: grid;
+  grid-template-columns: repeat(3, 3fr) 1fr;
+  justify-items: center;
+  gap: 10px;
 }
 
 .formfield .mdc-text-field--filled{
   display: grid;
   border-radius: 30px;
-}
-
-button{
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  border-width: 0px;
 }
 
 .mdc-text-field__input  {
@@ -29,5 +30,46 @@ button{
 .mat-mdc-autocomplete-panel {
   display: grid;
   justify-items: center;
-  font-weight: bolder;
+}
+
+.mat-mdc-autocomplete-panel > mat-option{
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+}
+
+.button{
+  display: grid;
+  justify-self: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 1cm;
+  height: 35px;
+  width: 35px;
+  border-width: 3px;
+}
+
+.buttondiv{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+}
+
+.mat-mdc-form-field > .mat-mdc-text-field-wrapper{
+  display: grid;
+  height: 30px;
+  align-content: center;
+}
+
+.mat-mdc-form-field-flex > .mat-mdc-form-field-infix{
+  width: 100px;
+}
+
+.mat-mdc-form-field-flex > .mat-mdc-form-field-icon-suffix > mat-datepicker-toggle > button {
+  display: grid;
+  justify-items: start;
+  justify-content: start;
+  justify-self: start;
+  margin-left: -20px;
 }
